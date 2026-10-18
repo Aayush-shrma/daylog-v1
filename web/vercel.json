@@ -1,11 +1,29 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "rewrites": [
-    { "source": "/auth/:path*", "destination": "https://daylog.onrender.com/auth/:path*" },
-    { "source": "/logs/:path*", "destination": "https://daylog.onrender.com/logs/:path*" },
-    { "source": "/stats/:path*", "destination": "https://daylog.onrender.com/stats/:path*" },
-    { "source": "/llm/:path*", "destination": "https://daylog.onrender.com/llm/:path*" },
-    { "source": "/health", "destination": "https://daylog.onrender.com/health" },
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/auth/:path*",
+      "destination": "https://daily-log-xzk3.onrender.com/auth/:path*"
+    },
+    {
+      "source": "/logs/:path*",
+      "destination": "https://daily-log-xzk3.onrender.com/logs/:path*"
+    },
+    {
+      "source": "/stats/:path*",
+      "destination": "https://daily-log-xzk3.onrender.com/stats/:path*"
+    },
+    {
+      "source": "/llm/:path*",
+      "destination": "https://daily-log-xzk3.onrender.com/llm/:path*"
+    },
+    {
+      "source": "/health",
+      "destination": "https://daily-log-xzk3.onrender.com/health"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }
