@@ -1,0 +1,43 @@
+services:
+  - type: web
+    name: daylog
+    runtime: docker
+    plan: free
+    healthCheckPath: /health
+    envVars:
+      - key: BASE_URL
+        sync: false          # the public https URL, e.g. https://daylog.onrender.com
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        sync: false          # Neon: postgresql+psycopg://...?sslmode=require
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      - key: GOOGLE_CLIENT_SECRET
+        sync: false
+      - key: EMAIL_BACKEND
+        value: resend
+      - key: EMAIL_FROM
+        sync: false          # e.g. no-reply@yourdomain.com (a verified sender)
+      - key: EMAIL_FROM_NAME
+        value: DayLog
+      - key: RESEND_API_KEY
+        sync: false          # or set SMTP_* instead and EMAIL_BACKEND=smtp
+      - key: LLM_PROVIDER
+        value: gemini
+      - key: LLM_API_KEY
+        sync: false
+      - key: LLM_MODEL
+        value: ""
+      - key: LLM_TIMEOUT_SECONDS
+        value: "20"
+      - key: DEFAULT_TIMEZONE
+        value: Asia/Kolkata
+      - key: DEBUG
+        value: "false"
+      - key: SESSION_DAYS
+        value: "7"
+    # Multi-stage Dockerfile: stage 1 builds web/ (Node) into web/dist,
+    # stage 2 installs the Python deps and serves the API + SPA.
+    dockerfilePath: ./Dockerfile
+    dockerContext: .

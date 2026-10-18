@@ -1,0 +1,26 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Local data / secrets
+*.db
+*.sqlite3
+.env
+
+# Node / frontend (built inside the image instead)
+node_modules/
+web/node_modules/
+web/dist/
+web/.vite/
+
+# Repo metadata
+.git/
+.gitignore
+
+# Additional environment files
+.env.*
+!.env.example

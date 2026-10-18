@@ -1,0 +1,30 @@
+# Env / secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.venv/
+venv/
+
+# Databases
+*.db
+*.sqlite3
+
+# Node / frontend build
+node_modules/
+web/dist/
+web/.vite/
+*.local
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Additional environment files
+.env.*
+!.env.example
