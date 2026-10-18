@@ -1,0 +1,68 @@
+
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "frontend": {
+      "root": "web/",
+      "framework": "vite"
+    },
+    "backend": {
+      "root": "./",
+      "entrypoint": "app.main:app"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/auth",
+      "destination": { "service": "backend" }
+    },
+    {
+      "source": "/auth/(.*)",
+      "destination": { "service": "backend" }
+    },
+    {
+      "source": "/logs",
+      "destination": { "service": "backend" }
+    },
+    {
+      "source": "/logs/(.*)",
+      "destination": { "service": "backend" }
+    },
+    {
+      "source": "/stats",
+      "destination": { "service": "backend" }
+    },
+    {
+      "source": "/stats/(.*)",
+      "destination": { "service": "backend" }
+    },
+    {
+      "source": "/llm",
+      "destination": { "service": "backend" }
+    },
+    {
+      "source": "/llm/(.*)",
+      "destination": { "service": "backend" }
+    },
+    {
+      "source": "/health",
+      "destination": { "service": "backend" }
+    },
+    {
+      "source": "/docs",
+      "destination": { "service": "backend" }
+    },
+    {
+      "source": "/openapi.json",
+      "destination": { "service": "backend" }
+    },
+    {
+      "source": "/redoc",
+      "destination": { "service": "backend" }
+    },
+    {
+      "source": "/(.*)",
+      "destination": { "service": "frontend" }
+    }
+  ]
+}
